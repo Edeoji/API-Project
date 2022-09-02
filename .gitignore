@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/TopRankHotel/.vs/TopRankHotel
+/TopRankHotel/Core/bin/Debug/net5.0
+/TopRankHotel/Core/obj
+/TopRankHotel/Logic/bin/Debug/net5.0
+/TopRankHotel/Logic/obj
+/TopRankHotel/TopRankHotel/bin/Debug/net5.0
+/TopRankHotel/TopRankHotel/obj
+/TopRankHotel/TopRankHotel/Properties
