@@ -1,0 +1,60 @@
+﻿@model Core.ViewModels.ApplicationUserViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AccountDashboardLayout.cshtml";
+}
+
+<h1>Login</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12 col-xl-5 m-auto mt-4">
+            @*@if (TempData["Message"] != null)
+        {
+            var tempDatamessage = (Core.Models.Messages)TempData["Messages"];
+            <partial name="_Messages" model="tempDatamessage" />
+        } *@
+
+            @if (Model != null)
+            {
+                <div class="m-auto text-success font-weight-bold">
+                    <span>@ViewBag.Messages</span>
+                </div>
+            }
+            else
+            {
+                <div class="m-auto text-danger font-weight-bold">
+                    <span>@ViewBag.Messages</span>
+                </div>
+            }
+            <div class="card mt-5 shadow-lg p-4 mb-5 bg-white rounded">
+
+                <center>
+                    <img src="~/image/m7.jpg" class="w-25 h-25 rounded-circle ">
+                </center>
+
+                @*<span class="text-danger text-center font-weight-bold">@ViewBag.ErrorMessage</span>*@
+                <div class="card-body mb-2">
+                    <form method="post" asp-controller="Account" asp-action="Login">
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input type="text" asp-for="Email" class="form-control p-3" placeholder="Enter you Email" required style="border-radius:30px;">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input type="text" class="form-control p-3" asp-for="Password" placeholder="Enter you Password" required style="border-radius:30px;">
+                        </div>
+
+                        <label asp-for="RememberMe"></label>
+                        <input type="checkbox" asp-for="RememberMe" required>
+
+                        <div class="form-group">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <p>Not Yet a Member Please Register <a asp-action="Register" asp-controller="Account" class="text-primary font-weight-bold">Register</a></p>
+            </div>
+
+        </div>
+    </div>
+</div>
